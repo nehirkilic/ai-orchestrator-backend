@@ -1,7 +1,8 @@
-# AI Orchestrator Backend – MVP
-*****Branch:** `mvp` — Version `0.1-MVP`***
+# AI Orchestrator Backend – Version 0.1 (MVP)
 
-This is the minimum viable version of an AI orchestrator backend built with **Java** and **Spring Boot**.  
+**Branch:** `mvp` — Version `0.1-MVP`
+
+This is the minimum viable version of an AI orchestrator backend built with **Java** and **Spring Boot**.\
 It processes user-submitted tasks (e.g., summarization) and simulates AI model responses using a modular service structure.
 
 ---
@@ -15,6 +16,7 @@ While this version is an MVP, the architecture draws inspiration from broader AG
 The goal is to build a general-purpose system that understands user intent from free-form input and intelligently selects the best AI tool — moving beyond keyword-based logic.
 
 ---
+
 ## Features
 
 - Accepts structured task requests via REST API
@@ -38,7 +40,7 @@ The goal is to build a general-purpose system that understands user intent from 
 
 ## Folder Structure
 
-```
+```bash
 src/
 └── main/
     ├── java/
@@ -52,37 +54,45 @@ src/
 ```
 
 ---
+
 ## How to Run
 
 ### Prerequisites
+
 - Java 21
 - Maven
 - Postman or a similar API testing tool (optional for manual testing)
 
 ### Running the App
+
 ```bash
 # 1. Clone the repository
 git clone https://github.com/nehirkilic/ai-orchestrator-backend.git
 cd ai-orchestrator-backend
 
-# 2. Build the project
+# 2. Checkout MVP version
+git checkout mvp
+
+# 3. Build the project
 mvn clean install
 
-# 3. Run the application
+# 4. Run the application
 mvn spring-boot:run
-
-
 ```
-> Once the server is running, the API will be accessible at `http://localhost:8000`.  
+
+> Once the server is running, the API will be accessible at `http://localhost:8000`.\
 > You can test the /api/tasks endpoint using Postman or any HTTP client.
 
-
 ---
-## API Usage
+
+## API Usage (MVP)
+
 ### Endpoint
+
 `POST /api/tasks`
 
 ### Request Body
+
 ```json
 {
   "taskType": "summarization",
@@ -92,6 +102,7 @@ mvn spring-boot:run
 ```
 
 ### Response
+
 ```json
 {
   "result": "[Mock LLM Response] summarization Artificial Intelligence is the simulation of human intelligence...",
@@ -103,18 +114,27 @@ mvn spring-boot:run
 }
 ```
 
+> ⚠️ Note: This behavior has changed in v0.2. The `taskType` field is now inferred from the input prompt.\
+> See `feature/intent-detector` branch for the updated architecture.
+
 ---
 
 ## Future Roadmap
 
-- [ ] Add real LLM API integration (e.g., OpenAI, Claude)
-- [ ] Task type–based dynamic routing
-- [ ] Prompt templating support
-- [ ] Model performance metrics (latency, logs)
-- [ ] Authentication & rate limiting
+This version is feature-complete as a minimum viable product.  
+All future enhancements are continued in version 0.2 and beyond.
+
+---
+
+## Version History
+
+- **v0.1 (MVP)** – Manual `taskType`-based orchestration with mock LLM simulation
+- **v0.2** – Intent-based prompt understanding and future-ready orchestration backend\
+  → See `features/intent-detector` branch for the latest version.
 
 ---
 
 ## License
-Licensed for non-commercial and academic use only.  
-© 2025 Nehir Kılıç.  All rights reserved.
+
+Licensed for non-commercial and academic use only.\
+© 2025 Nehir Kılıç. All rights reserved.
