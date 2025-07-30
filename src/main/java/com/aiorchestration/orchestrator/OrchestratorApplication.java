@@ -1,16 +1,11 @@
 package com.aiorchestration.orchestrator;
 
+import com.aiorchestration.orchestrator.config.HuggingFaceConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-/**
- * Main entry point for the AI Task Orchestration application.
- * <p>
- * Boots the Spring context and initializes all components.
- *
- * @author Nehir
- * @version 0.1-MVP
- */
+@EnableConfigurationProperties(HuggingFaceConfig.class)
 @SpringBootApplication
 public class OrchestratorApplication {
 

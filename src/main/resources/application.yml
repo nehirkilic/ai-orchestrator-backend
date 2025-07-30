@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: orchestrator
+
+  config:
+    import: optional:env[.env]
+
+huggingface:
+  api:
+    url: https://api-inference.huggingface.co/models/joeddav/xlm-roberta-large-xnli
+    token: ${HUGGINGFACE_API_TOKEN}
+  labels:
+    - summarization
+    - translation
+    - open-dialogue
+    - code-generation
+    - statistical-analysis
+    - data-visualization
+    - fact-query
+    - math-solution
