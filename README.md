@@ -60,7 +60,7 @@ git clone https://github.com/nehirkilic/ai-orchestrator-backend.git
 cd ai-orchestrator-backend
 
 # 2. Switch to version 0.2
-git checkout features/intent-detector
+git checkout feature/intent-detector
 
 # 3. Add your Hugging Face token to a .env file or your environment variables
 export HUGGINGFACE_API_TOKEN=your_actual_token_here
